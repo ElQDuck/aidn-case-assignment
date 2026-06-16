@@ -1,4 +1,4 @@
-using Measurements.Businesslogic.Entities;
+using Measurements.BusinessLogic.Entities;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 

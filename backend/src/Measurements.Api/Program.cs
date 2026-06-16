@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Measurements.Api;
+using Measurements.BusinessLogic;
 using Microsoft.AspNetCore.Http.Features;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,9 +28,23 @@ builder.Services.AddProblemDetails(options =>
     };
 });
 builder.Services.AddExceptionHandler<ResultExceptionHandler>();
+builder.Services.AddBusinessLogic();
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+// Only turn on Swagger for development
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseExceptionHandler();
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
 
 app.Run();

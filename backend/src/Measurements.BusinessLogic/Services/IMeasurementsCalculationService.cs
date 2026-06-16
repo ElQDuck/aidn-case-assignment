@@ -1,6 +1,6 @@
-using Measurements.BusinessLogic2.Entities;
+using Measurements.BusinessLogic.Entities;
 
-namespace Measurements.BusinessLogic2.Services;
+namespace Measurements.BusinessLogic.Services;
 
 public interface IMeasurementsCalculationService
 {

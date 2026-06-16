@@ -8,11 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.11" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Measurements.Businesslogic\Measurements.Businesslogic.csproj" />
+      <ProjectReference Include="..\Measurements.BusinessLogic\Measurements.BusinessLogic.csproj" />
     </ItemGroup>
     
 </Project>

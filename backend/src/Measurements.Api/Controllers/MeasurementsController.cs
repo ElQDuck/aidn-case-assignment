@@ -1,6 +1,42 @@
+using Measurements.BusinessLogic.Services;
+using Microsoft.AspNetCore.Mvc;
+
 namespace Measurements.Api.Controllers;
 
-public class MeasurementsController
+/// <summary>
+/// The REST API controller for claims.
+/// </summary>
+[ApiController]
+public class MeasurementsController: ControllerBase
 {
+    private readonly ILogger<MeasurementsController> _logger;
+    private readonly IMeasurementsCalculationService _measurementsCalculationService;
     
+    /// <summary>
+    /// Initializes an instance of the <see cref="MeasurementsController"/> class.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="measurementsCalculationService">The measurements calculation service.</param>
+    public MeasurementsController(ILogger<MeasurementsController> logger, IMeasurementsCalculationService measurementsCalculationService)
+    {
+        _logger = logger;
+        _measurementsCalculationService = measurementsCalculationService;
+    }
+    
+    /// <summary>
+    /// The route to calculate the NEWS score.
+    /// </summary>
+    /// <param name="temperature"></param>
+    /// <param name="heartRate"></param>
+    /// <param name="respiratoryRate"></param>
+    /// <returns>The NEWS score.</returns>
+    [HttpPost("NEWS")]
+    [Produces("application/json")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+    public async Task<ActionResult> CalculateNewsScoreAsync(int temperature, int heartRate, int respiratoryRate)
+    {
+        var result = await _measurementsCalculationService.CalculateScoreAsync(temperature, heartRate, respiratoryRate);
+        result.EnsureSuccess();
+        return Ok(result.Value);
+    }
 }

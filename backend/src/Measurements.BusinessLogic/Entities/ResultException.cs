@@ -1,4 +1,4 @@
-namespace Measurements.BusinessLogic2.Entities;
+namespace Measurements.BusinessLogic.Entities;
 
 [Serializable]
 public class ResultException: Exception
