@@ -1,7 +1,9 @@
 using System.Text.Json.Serialization;
 using Measurements.Api;
+using Measurements.Api.Examples;
 using Measurements.BusinessLogic;
 using Microsoft.AspNetCore.Http.Features;
+using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +15,11 @@ builder.Services
     });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(x =>
+    {
+        x.ExampleFilters();
+    });
+builder.Services.AddSwaggerExamplesFromAssemblyOf<CalculateNewsScoreRequestExample>();
 
 // Provide detailed information if a request fails. (ref: https://www.rfc-editor.org/rfc/rfc9457.html)
 // Credits: Nick Chapsas -> https://www.youtube.com/watch?v=-TGZypSinpw

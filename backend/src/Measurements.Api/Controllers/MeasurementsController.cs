@@ -1,6 +1,9 @@
+using Measurements.Api.Examples;
 using Measurements.Api.Records;
+using Measurements.BusinessLogic.Entities;
 using Measurements.BusinessLogic.Services;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace Measurements.Api.Controllers;
 
@@ -34,9 +37,12 @@ public class MeasurementsController: ControllerBase
     [HttpPost("NEWS")]
     [Produces("application/json")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [SwaggerRequestExample(typeof(CalculateNewsScoreRequest), typeof(CalculateNewsScoreRequestExample))]
     public async Task<ActionResult> CalculateNewsScoreAsync([FromBody] CalculateNewsScoreRequest request)
     {
-        var result = await _measurementsCalculationService.CalculateScoreAsync(request.BodyTemperature, request.HeartRate, request.RespiratoryRate);
+        var measurements = request.Measurements.Select(m => new Measurement(m.Type, m.Value));
+        var result = await _measurementsCalculationService.CalculateScoreAsync(measurements);
         result.EnsureSuccess();
         return Ok(result.Value);
     }

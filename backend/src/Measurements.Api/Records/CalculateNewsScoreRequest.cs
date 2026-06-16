@@ -1,9 +1,6 @@
-using System.ComponentModel.DataAnnotations;
+using Measurements.BusinessLogic.Enums;
 
 namespace Measurements.Api.Records;
 
-public record CalculateNewsScoreRequest(
-    [Required] int BodyTemperature,
-    [Required] int HeartRate,
-    [Required] int RespiratoryRate
-    );
+public record MeasurementRequest(MeasurementType Type, int Value);
+public record CalculateNewsScoreRequest(IEnumerable<MeasurementRequest> Measurements);
