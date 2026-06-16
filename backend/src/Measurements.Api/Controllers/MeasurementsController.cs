@@ -1,3 +1,4 @@
+using Measurements.Api.Records;
 using Measurements.BusinessLogic.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,9 +34,9 @@ public class MeasurementsController: ControllerBase
     [HttpPost("NEWS")]
     [Produces("application/json")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
-    public async Task<ActionResult> CalculateNewsScoreAsync(int temperature, int heartRate, int respiratoryRate)
+    public async Task<ActionResult> CalculateNewsScoreAsync([FromBody] CalculateNewsScoreRequest request)
     {
-        var result = await _measurementsCalculationService.CalculateScoreAsync(temperature, heartRate, respiratoryRate);
+        var result = await _measurementsCalculationService.CalculateScoreAsync(request.BodyTemperature, request.HeartRate, request.RespiratoryRate);
         result.EnsureSuccess();
         return Ok(result.Value);
     }
