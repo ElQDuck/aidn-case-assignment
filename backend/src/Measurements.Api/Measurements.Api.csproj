@@ -7,4 +7,12 @@
         <RootNamespace>Measurements.Api</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Measurements.Businesslogic\Measurements.Businesslogic.csproj" />
+    </ItemGroup>
+    
 </Project>
