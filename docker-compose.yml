@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: ./backend/src
+      dockerfile: Dockerfile
+    ports:
+      - "5171:5171"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5171
+
+  frontend:
+    build:
+      context: ./frontend/src
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - BACKEND_URL=http://backend:5171
+    depends_on:
+      - backend
