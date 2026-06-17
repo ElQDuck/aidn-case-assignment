@@ -1,15 +1,25 @@
 # Case Assignment
 
-Run `docker compose up --build -d` to run everything.
+## NEWS Calculator
 
-```bash
-docker compose up --build -d
-```
+The **N**ational **E**arly **W**arning **S**core determines the degree of illness of a patient and prompts critical care intervention.
 
-Visit: [http://localhost:3000](http://localhost:3000)
+## Starting the NEWS Calculator locally
 
-To stop everything run:
+1. To start the NEWS calculator locally, run the following command:
+    ```bash
+    docker compose up --build -d
+    ```
 
-```bash
-docker compose down
-```
+2. Visit: [http://localhost:3000](http://localhost:3000)
+
+3. To stop everything, run:
+    ```bash
+    docker compose down
+    ```
+
+## Additional Considerations
+
+- Should the UI provide recommendations depending on the NEWS score?
+- How about limitations (e.g., pregnancy, age less than 16, etc.)? Should those somehow be visible in the UI?
+- Should the UI include shortcuts to telephone numbers (or other communication channels) if the score is too high?
