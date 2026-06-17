@@ -2,7 +2,7 @@
 
 ## NEWS Calculator
 
-The **N**ational **E**arly **W**arning **S**core determines the degree of illness of a patient and prompts critical care intervention.
+The [**N**ational **E**arly **W**arning **S**core](https://www.mdcalc.com/calc/1873/national-early-warning-score-news) determines the degree of illness of a patient and prompts critical care intervention.
 
 ## Starting the NEWS Calculator locally
 
