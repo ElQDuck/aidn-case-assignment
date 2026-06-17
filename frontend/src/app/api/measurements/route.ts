@@ -13,7 +13,16 @@ export async function POST(request: NextRequest) {
     const data = await response.json()
 
     if (!response.ok) {
-      return NextResponse.json({ error: data.error ?? 'Backend error.' }, { status: response.status })
+      // Out of range — tell the user what value is invalid
+      if (data.title === 'invalid value' && data.detail) {
+        return NextResponse.json({ error: data.detail }, { status: 400 })
+      }
+
+      // All other errors — generic message, not the user's fault
+      return NextResponse.json(
+        { error: 'Something went wrong on our end. Please try again.' },
+        { status: 500 }
+      )
     }
 
     return NextResponse.json(data, { status: 200 })
