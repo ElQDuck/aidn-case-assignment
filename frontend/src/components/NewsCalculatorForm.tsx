@@ -115,14 +115,19 @@ export default function NewsForm() {
             disabled={isLoading}
             style={{
               height: '40px',
-              padding: '0 20px',
+              width: '201px',
+              paddingTop: '8px',
+              paddingBottom: '8px',
+              paddingLeft: '16px',
+              paddingRight: '16px',
               backgroundColor: '#7424DA',
               color: '#fff',
               border: 'none',
-              borderRadius: '999px',
+              borderRadius: '40px',
               fontFamily: 'Inter',
               fontWeight: 500,
-              fontSize: '14px',
+              fontSize: '16px',
+              lineHeight: '24px',
               cursor: isLoading ? 'not-allowed' : 'pointer',
               opacity: isLoading ? 0.6 : 1,
               whiteSpace: 'nowrap',
@@ -133,7 +138,20 @@ export default function NewsForm() {
           <button
             type="button"
             onClick={handleReset}
-            style={{ background: 'none', border: 'none', fontFamily: 'Inter', fontSize: '14px', color: '#374151', cursor: 'pointer' }}
+            style={{ 
+              height: '40px',
+              width: '115px',
+              paddingTop: '8px',
+              paddingBottom: '8px',
+              paddingLeft: '16px',
+              paddingRight: '16px',
+              backgroundColor: '#FAF6FF',
+              border: 'none',
+              fontFamily: 'Inter',
+              fontSize: '16px',
+              lineHeight: '24px',
+              color: '#000000',
+              cursor: 'pointer' }}
           >
             Reset form
           </button>
