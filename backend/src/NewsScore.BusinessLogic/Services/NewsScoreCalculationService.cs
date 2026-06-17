@@ -12,6 +12,7 @@ public class NewsScoreCalculationService: INewsScoreCalculationService
         foreach (var measurement in measurements)
         {
             if (!MeasurementsScales.All.TryGetValue(measurement.Type, out var scale))
+                // Could probably log the error...
                 return Result.FromException<int>(
                     // TODO: Move into messages
                     new ResultException("unknown type", $"Unknown measurement type {measurement.Type}", 400));

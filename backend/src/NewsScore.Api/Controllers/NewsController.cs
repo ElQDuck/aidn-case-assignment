@@ -11,17 +11,17 @@ namespace NewsScore.Api.Controllers;
 /// The REST API controller for claims.
 /// </summary>
 [ApiController]
-public class MeasurementsController: ControllerBase
+public class NewsController: ControllerBase
 {
-    private readonly ILogger<MeasurementsController> _logger;
+    private readonly ILogger<NewsController> _logger;
     private readonly INewsScoreCalculationService _newsScoreCalculationService;
     
     /// <summary>
-    /// Initializes an instance of the <see cref="MeasurementsController"/> class.
+    /// Initializes an instance of the <see cref="NewsController"/> class.
     /// </summary>
     /// <param name="logger">The logger.</param>
     /// <param name="newsScoreCalculationService">The measurements calculation service.</param>
-    public MeasurementsController(ILogger<MeasurementsController> logger, INewsScoreCalculationService newsScoreCalculationService)
+    public NewsController(ILogger<NewsController> logger, INewsScoreCalculationService newsScoreCalculationService)
     {
         _logger = logger;
         _newsScoreCalculationService = newsScoreCalculationService;
