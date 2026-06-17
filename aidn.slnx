@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="backend/tests/NewsScore.Api.Tests/NewsScore.Api.Tests.csproj" />
+  <Project Path="backend/tests/NewsScore.BusinessLogic.Tests/NewsScore.BusinessLogic.Tests.csproj" />
+  <Project Path="backend\src\NewsScore.Api\NewsScore.Api.csproj" />
+  <Project Path="backend\src\NewsScore.BusinessLogic\NewsScore.BusinessLogic.csproj" />
+</Solution>
