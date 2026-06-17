@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
-using Measurements.Api;
-using Measurements.Api.Examples;
-using Measurements.BusinessLogic;
+using NewsScore.Api;
+using NewsScore.Api.Examples;
+using NewsScore.BusinessLogic;
 using Microsoft.AspNetCore.Http.Features;
 using Swashbuckle.AspNetCore.Filters;
 

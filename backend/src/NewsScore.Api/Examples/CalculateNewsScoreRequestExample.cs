@@ -1,8 +1,8 @@
-using Measurements.Api.Records;
-using Measurements.BusinessLogic.Enums;
+using NewsScore.BusinessLogic.Enums;
+using NewsScore.Api.Records;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace Measurements.Api.Examples;
+namespace NewsScore.Api.Examples;
 
 public class CalculateNewsScoreRequestExample : IExamplesProvider<CalculateNewsScoreRequest>
 {

@@ -1,8 +1,8 @@
-using Measurements.BusinessLogic.Enums;
+using NewsScore.BusinessLogic.Enums;
 
-namespace Measurements.BusinessLogic.Entities;
+namespace NewsScore.BusinessLogic.Entities;
 
-public static class NewsScales
+public static class MeasurementsScales
 {
     /// <summary>
     /// Measurement scales.

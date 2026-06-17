@@ -1,8 +1,8 @@
-using Measurements.BusinessLogic.Entities;
+using NewsScore.BusinessLogic.Entities;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Measurements.Api;
+namespace NewsScore.Api;
 
 public class ResultExceptionHandler: IExceptionHandler
 {

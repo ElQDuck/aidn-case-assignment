@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.ExceptionServices;
 
-namespace Measurements.BusinessLogic.Entities;
+namespace NewsScore.BusinessLogic.Entities;
 
 /// <summary>
 /// The result of an operation which can be successful or fail.

@@ -1,8 +1,8 @@
-using Measurements.BusinessLogic.Entities;
+using NewsScore.BusinessLogic.Entities;
 
-namespace Measurements.BusinessLogic.Services;
+namespace NewsScore.BusinessLogic.Services;
 
-public class MeasurementsCalculationService: IMeasurementsCalculationService
+public class NewsScoreCalculationService: INewsScoreCalculationService
 {
     /// <inheritdoc/>
     public async Task<Result<int>> CalculateScoreAsync(IEnumerable<Measurement> measurements)
@@ -11,7 +11,7 @@ public class MeasurementsCalculationService: IMeasurementsCalculationService
 
         foreach (var measurement in measurements)
         {
-            if (!NewsScales.All.TryGetValue(measurement.Type, out var scale))
+            if (!MeasurementsScales.All.TryGetValue(measurement.Type, out var scale))
                 return Result.FromException<int>(
                     // TODO: Move into messages
                     new ResultException("unknown type", $"Unknown measurement type {measurement.Type}", 400));

@@ -1,4 +1,4 @@
-namespace Measurements.BusinessLogic.Entities;
+namespace NewsScore.BusinessLogic.Entities;
 
 /// <summary>
 /// The measurement range for the different measurement typse.

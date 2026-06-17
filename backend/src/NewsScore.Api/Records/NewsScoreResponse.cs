@@ -1,4 +1,4 @@
-namespace Measurements.Api.Records;
+namespace NewsScore.Api.Records;
 
 public class NewsScoreResponse(int score)
 {

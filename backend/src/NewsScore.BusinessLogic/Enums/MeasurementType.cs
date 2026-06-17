@@ -1,4 +1,4 @@
-namespace Measurements.BusinessLogic.Enums;
+namespace NewsScore.BusinessLogic.Enums;
 
 public enum MeasurementType
 {

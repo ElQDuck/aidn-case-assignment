@@ -1,4 +1,4 @@
-namespace Measurements.BusinessLogic.Entities;
+namespace NewsScore.BusinessLogic.Entities;
 
 
 /// <summary>

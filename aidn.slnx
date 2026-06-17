@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="backend/src/Measurements.Api/Measurements.Api.csproj" />
-  <Project Path="backend\src\Measurements.BusinessLogic\Measurements.BusinessLogic.csproj" />
+  <Project Path="backend\src\NewsScore.Api\NewsScore.Api.csproj" />
+  <Project Path="backend\src\NewsScore.BusinessLogic\NewsScore.BusinessLogic.csproj" />
 </Solution>

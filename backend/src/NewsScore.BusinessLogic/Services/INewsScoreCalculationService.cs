@@ -1,8 +1,8 @@
-using Measurements.BusinessLogic.Entities;
+using NewsScore.BusinessLogic.Entities;
 
-namespace Measurements.BusinessLogic.Services;
+namespace NewsScore.BusinessLogic.Services;
 
-public interface IMeasurementsCalculationService
+public interface INewsScoreCalculationService
 {
     /// <summary>
     /// Calculates an individual score based on provided health measurements.

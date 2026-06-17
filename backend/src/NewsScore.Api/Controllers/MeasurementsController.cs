@@ -1,11 +1,11 @@
-using Measurements.Api.Examples;
-using Measurements.Api.Records;
-using Measurements.BusinessLogic.Entities;
-using Measurements.BusinessLogic.Services;
+using NewsScore.BusinessLogic.Entities;
+using NewsScore.BusinessLogic.Services;
 using Microsoft.AspNetCore.Mvc;
+using NewsScore.Api.Examples;
+using NewsScore.Api.Records;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace Measurements.Api.Controllers;
+namespace NewsScore.Api.Controllers;
 
 /// <summary>
 /// The REST API controller for claims.
@@ -14,17 +14,17 @@ namespace Measurements.Api.Controllers;
 public class MeasurementsController: ControllerBase
 {
     private readonly ILogger<MeasurementsController> _logger;
-    private readonly IMeasurementsCalculationService _measurementsCalculationService;
+    private readonly INewsScoreCalculationService _newsScoreCalculationService;
     
     /// <summary>
     /// Initializes an instance of the <see cref="MeasurementsController"/> class.
     /// </summary>
     /// <param name="logger">The logger.</param>
-    /// <param name="measurementsCalculationService">The measurements calculation service.</param>
-    public MeasurementsController(ILogger<MeasurementsController> logger, IMeasurementsCalculationService measurementsCalculationService)
+    /// <param name="newsScoreCalculationService">The measurements calculation service.</param>
+    public MeasurementsController(ILogger<MeasurementsController> logger, INewsScoreCalculationService newsScoreCalculationService)
     {
         _logger = logger;
-        _measurementsCalculationService = measurementsCalculationService;
+        _newsScoreCalculationService = newsScoreCalculationService;
     }
     
     /// <summary>
@@ -40,7 +40,7 @@ public class MeasurementsController: ControllerBase
     public async Task<ActionResult> CalculateNewsScoreAsync([FromBody] CalculateNewsScoreRequest request)
     {
         var measurements = request.Measurements.Select(m => new Measurement(m.Type, m.Value));
-        var result = await _measurementsCalculationService.CalculateScoreAsync(measurements);
+        var result = await _newsScoreCalculationService.CalculateScoreAsync(measurements);
         result.EnsureSuccess();
         return Ok(new NewsScoreResponse(result.Value));
     }
