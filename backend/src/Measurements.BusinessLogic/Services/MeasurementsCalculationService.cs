@@ -13,7 +13,8 @@ public class MeasurementsCalculationService: IMeasurementsCalculationService
         {
             if (!NewsScales.All.TryGetValue(measurement.Type, out var scale))
                 return Result.FromException<int>(
-                    new ResultException("unknown_type", $"Unknown measurement type {measurement.Type}", 400));
+                    // TODO: Move into messages
+                    new ResultException("unknown type", $"Unknown measurement type {measurement.Type}", 400));
 
             var result = scale.Evaluate(measurement.Value);
             if (!result.IsSuccess) return result;

@@ -6,6 +6,10 @@ namespace Measurements.Api.Examples;
 
 public class CalculateNewsScoreRequestExample : IExamplesProvider<CalculateNewsScoreRequest>
 {
+    /// <summary>
+    /// An example for a successful CalculateNewsScoreRequest.
+    /// </summary>
+    /// <returns></returns>
     public CalculateNewsScoreRequest GetExamples() => new(
     [
         new(MeasurementType.TEMP, 39),

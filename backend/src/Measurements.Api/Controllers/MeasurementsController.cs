@@ -30,9 +30,7 @@ public class MeasurementsController: ControllerBase
     /// <summary>
     /// The route to calculate the NEWS score.
     /// </summary>
-    /// <param name="temperature"></param>
-    /// <param name="heartRate"></param>
-    /// <param name="respiratoryRate"></param>
+    /// <param name="request">The calculate NEWS score request. Contains TEMP, HR, RR as int values.</param>
     /// <returns>The NEWS score.</returns>
     [HttpPost("NEWS")]
     [Produces("application/json")]
@@ -44,6 +42,6 @@ public class MeasurementsController: ControllerBase
         var measurements = request.Measurements.Select(m => new Measurement(m.Type, m.Value));
         var result = await _measurementsCalculationService.CalculateScoreAsync(measurements);
         result.EnsureSuccess();
-        return Ok(result.Value);
+        return Ok(new NewsScoreResponse(result.Value));
     }
 }

@@ -4,6 +4,9 @@ namespace Measurements.BusinessLogic.Entities;
 
 public static class NewsScales
 {
+    /// <summary>
+    /// Measurement scales.
+    /// </summary>
     public static readonly Dictionary<MeasurementType, MeasurementScale> All = new()
     {
         [MeasurementType.TEMP] = new MeasurementScale([

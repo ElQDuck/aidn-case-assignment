@@ -15,6 +15,8 @@ builder.Services
     });
 
 builder.Services.AddEndpointsApiExplorer();
+
+// Configure Swagger
 builder.Services.AddSwaggerGen(x =>
     {
         x.ExampleFilters();
