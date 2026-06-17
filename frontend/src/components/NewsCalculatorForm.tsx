@@ -33,7 +33,7 @@ function validate(vals: FormValues): FormErrors {
   return errs
 }
 
-export default function NewsForm() {
+export default function NewsCalculatorForm() {
   const [values, setValues] = useState<FormValues>(INITIAL_VALUES)
   const [errors, setErrors] = useState<FormErrors>({})
   const [score, setScore] = useState<number | null>(null)

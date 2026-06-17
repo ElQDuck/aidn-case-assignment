@@ -1,5 +1,5 @@
-import NewsForm from '@/components/NewsCalculatorForm'
+import NewsCalculatorForm from '@/components/NewsCalculatorForm'
 
 export default function Home() {
-  return <NewsForm />
+  return <NewsCalculatorForm />
 }
